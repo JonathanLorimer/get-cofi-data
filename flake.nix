@@ -152,6 +152,8 @@
 
             services.osmosisd = {
               enable = true;
+              node-name = "Cofi-data";
+              snapshot-sync-url = "https://snapshots.polkachu.com/snapshots/osmosis/osmosis_6784048.tar.lz4";
               packages = with cosmos; {
                 genesis = osmosis1;
                 v2 = osmosis2;
@@ -167,7 +169,7 @@
                 v12 = osmosis12;
               };
 
-              peers = [
+              persistent-peers = [
                 ## Cosmostation
                 "8f67a2fcdd7ade970b1983bf1697111d35dfdd6f@52.79.199.137:26656"
                 "00c328a33578466c711874ec5ee7ada75951f99a@35.82.201.64:26656"
@@ -240,7 +242,6 @@
               ];
               cosmovisor = cosmos.cosmovisor;
               genesis-file = "${self.packages.${system}.osmosis-genesis-file}/osmosis-1/genesis.json";
-              node-name = "Cofi-data";
             };
           })
         ];
