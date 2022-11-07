@@ -105,7 +105,7 @@
         inherit system;
         modules = [
           #(nixpkgs + "/nixos/modules/virtualisation/amazon-image.nix")
-          # (nixpkgs + "/nixos/modules/virtualisation/qemu-vm.nix")
+          (nixpkgs + "/nixos/modules/virtualisation/qemu-vm.nix")
 
           cosmos-nix.nixosModules.osmosis
 
